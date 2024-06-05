@@ -68,7 +68,7 @@ namespace librealsense
 
         // options
         color_ep->register_option(RS2_OPTION_GLOBAL_TIME_ENABLED, enable_global_time_option);
-        color_ep->get_option(RS2_OPTION_GLOBAL_TIME_ENABLED).set(0);
+        color_ep->get_option(RS2_OPTION_GLOBAL_TIME_ENABLED).set(1);
         color_ep->register_pu(RS2_OPTION_BACKLIGHT_COMPENSATION);
         color_ep->register_pu(RS2_OPTION_BRIGHTNESS);
         color_ep->register_pu(RS2_OPTION_CONTRAST);
@@ -77,8 +77,6 @@ namespace librealsense
         color_ep->register_pu(RS2_OPTION_SATURATION);
         color_ep->register_pu(RS2_OPTION_SHARPNESS);
         color_ep->register_pu(RS2_OPTION_AUTO_EXPOSURE_PRIORITY);
-
-        color_ep->register_option(RS2_OPTION_GLOBAL_TIME_ENABLED, enable_global_time_option);
 
         auto white_balance_option = std::make_shared<uvc_pu_option>(*raw_color_ep, RS2_OPTION_WHITE_BALANCE);
         auto auto_white_balance_option = std::make_shared<uvc_pu_option>(*raw_color_ep, RS2_OPTION_ENABLE_AUTO_WHITE_BALANCE);

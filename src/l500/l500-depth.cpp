@@ -76,6 +76,10 @@ namespace librealsense
         auto& depth_sensor = get_depth_sensor();
         auto& raw_depth_sensor = get_raw_depth_sensor();
 
+        auto enable_global_time_option = std::shared_ptr<global_time_option>(new global_time_option());
+        depth_sensor.register_option(RS2_OPTION_GLOBAL_TIME_ENABLED, enable_global_time_option);
+        depth_sensor.get_option(RS2_OPTION_GLOBAL_TIME_ENABLED).set(1);
+
         depth_sensor.register_option(
             RS2_OPTION_LLD_TEMPERATURE,
             std::make_shared< l500_temperature_options >( this,

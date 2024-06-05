@@ -117,7 +117,7 @@ namespace librealsense
         auto hid_ep = std::make_shared<l500_hid_sensor>("Motion Module", raw_hid_ep, this, this);
 
         hid_ep->register_option(RS2_OPTION_GLOBAL_TIME_ENABLED, enable_global_time_option);
-        hid_ep->get_option(RS2_OPTION_GLOBAL_TIME_ENABLED).set(0);
+        hid_ep->get_option(RS2_OPTION_GLOBAL_TIME_ENABLED).set(1);
         hid_ep->register_option(RS2_OPTION_GLOBAL_TIME_ENABLED, enable_global_time_option);
 
         // register pre-processing

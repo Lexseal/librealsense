@@ -89,3 +89,7 @@ librealsense-log.txt
 *.cxx
 
 .vscode/*
+
+log/
+
+ubuntu-jammy/
